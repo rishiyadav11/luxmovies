@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs', {title: "LUXMovies | LUXMovies 2025 | Download Hindi Dubbed Movies | Dual Audio Movies | LUX Movies | LUXMovie | LUXMovies OFFicial Website | LUXMovies App | LUXMovies APK | DOTMovies | MoviesMOD | VEGAMovies | HDHub4U | Movies4U | FilmyZilla | FilmyWap | BollyFlix | MovieRulz | KuttyMovies | FilmyMeet | TamilYogi | MP4Moviez | LUXMovies | LUXMovies OFFicial Website | LUXMovies 2025 | Download Hindi Dubbed Movies | Dual Audio Movies | LUX Movies | LUXMovie | DOTMovies | MoviesMOD | VEGAMovies | HDHub4U | Movies4U | MP4Moviez | FilmyZilla | FilmyWap | BollyFlix | MovieRulz | KuttyMovies | FilmyMeet | TamilYogi",description: "LUXMovies | LUXMovies OFFicial Website | LUXMovies 2025 | Download Hindi Dubbed Movies | Dual Audio Movies | LUX Movies | LUXMovie | DOTMovies | MoviesMOD | VEGAMovies | HDHub4U | Movies4U | MP4Moviez | FilmyZilla | FilmyWap | BollyFlix | MovieRulz | KuttyMovies | FilmyMeet | TamilYogi", keywords: "luxmovies,luxmovies.yt,luxmovies shop,luxmovies download,luxmovies 2.0,11x movies,luxmovies today,luxmovies jio cinema,luxmovies new link,luxmovies cloud,luxmovies pro download,luxmovies bit,luxmovies new website,luxmovies pushpa 2,lux 13,luxmovies in app,luxmovies official,luxmovies netflix archive download,luxmovies app,luxmovies live bollywood,luxmovies live download,luxmovies lol download,luxmovies new domain,luxmovies skin,luxmovies website,lux jasmine"}) %>
+  <div id="movie_card_container">
+
+    <!-- First section for movies 1-8 -->
+    <% movies.forEach(movie => { %>
+      <div class="section-one">
+        <%- include('./partials/movie_card.ejs', { movie }) %>
+      </div>
+    <% }) %>   
+
+</div>
+
+<%- include('./partials/pagination.ejs', {movies,page}) %> 
+<%- include('./partials/footer.ejs') %>
