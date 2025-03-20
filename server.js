@@ -11,6 +11,10 @@ app.use(express.static(path.join(__dirname, "public/")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+app.get('/robots.txt', (req, res) => {
+  res.sendFile(__dirname + "/robots.txt");
+});
+
 app.get("/", async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1; // Default to page 1
