@@ -1,24 +1,15 @@
 <%- include('./partials/header.ejs', {title: movie.title,keywords:
-movie.keywords.join(", "),description: movie.metaDesc}) %>
-
-<div>
-  <script
-    async="async"
-    data-cfasync="false"
-    src="//offspringthisscarcely.com/a224aeb344eece72bf0ce9ab1fa2fe53/invoke.js"
-  ></script>
-  <div id="container-a224aeb344eece72bf0ce9ab1fa2fe53"></div>
-</div>
+movie.keywords.join(","),description: movie.metaDesc}) %>
 
 <section id="movie_container">
   <h1 id="movie_heading"><%= movie.title %></h1>
-    <hr class="movie_hr" />
-    <p class="white movie_para">
-      <span class="orange"> <%= movie.metaDesc %> </span>. We Provide
-      <span class="aqua">Direct Download Links</span> For Best Qualities And
-      <span class="yellowgreen">Fast Download.</span> You Can Contact us on
-      Telegram For the Latest Updates. AllMoviesHub is the best online platform
-      for downloading <span class="red"> <%= movie.title %> </span> and NetFlix
+  <hr class="movie_hr" />
+  <p class="white movie_para">
+    <span class="orange"> <%= movie.metaDesc %> </span>. We Provide
+    <span class="aqua">Direct Download Links</span> For Best Qualities And
+    <span class="yellowgreen">Fast Download.</span> You Can Contact us on
+    Telegram For the Latest Updates. AllMovieHub is the best online platform
+    for downloading <span class="red"> <%= movie.title %> </span> and NetFlix
     Original WEB Series Complete All Episodes Available in
     <span class="aqua">480p & 720p & 1080p qualities.</span> <%= movie.synopsis
     %>. We provide direct <span class="yellowgreen">G-Drive download</span> link
@@ -28,8 +19,7 @@ movie.keywords.join(", "),description: movie.metaDesc}) %>
   </p>
   <hr class="movie_hr" />
 
-
-  <h2 id="movie_heading2"><%= movie.title %>| Allmovieshub</h2>
+  <h2 id="movie_heading2"><%= movie.title %>| Allmoviehub</h2>
 
   <hr class="movie_hr" />
   <p class="white info_para">
@@ -79,7 +69,6 @@ movie.keywords.join(", "),description: movie.metaDesc}) %>
   <hr class="movie_hr" />
 
 
-
   <hr class="movie_hr" />
   <h3 class="movie_para orange movie_heading3">Movie-SYNOPSIS/Story</h3>
   <p class="white movie_para"><%= movie.synopsis %></p>
@@ -87,29 +76,26 @@ movie.keywords.join(", "),description: movie.metaDesc}) %>
   <h3 class="orange movie_heading3">Screenshots: "See Before Downloading"</h3>
   <hr class="movie_hr" />
 
-  <img class="white" src="https://allmovieshub.live/images/image/<%= movie.slug
-  %>.jpg" alt="<%= movie.keywords.join(" , ") %>" loading="lazy"
-  onerror="handleImageError(this)" >
+  <img class="white" src="https://allmovieshub.live/movies/image/<%= movie.slug
+  %>.jpg" alt="<%= movie.keywords.join(" , ") %>" loading="lazy" onerror="handleImageError(this)">
 
-  <h2 id="movie_heading2"><%= movie.title %>| Allmovieshub</h2>
+  <h2 id="movie_heading2"><%= movie.title %>| Allmoviehub</h2>
   <p class="white movie_para">
     Click on the Above Download Button to Download File. Please Contact Us if
     any link is Broken or file is Missing. We Will fix it Immediately.
   </p>
   <hr class="movie_hr" />
- 
 
   <h3 id="download_label">&#8595;&#8595; DOWNLOAD LINKS &#8595;&#8595;</h3>
-  <% movie.downloadLinks.forEach((elem) => { %> <% if (elem.type !== ": DOWNLOAD
-  LINKS IN HINDI:") { %>
-  <a
-    class="download_link"
-    target="_blank"
-    href="https://offspringthisscarcely.com/f2hzqz837i?key=0c7d11d4e7eb7b38a83d1c36f742341d"
-  >
+  <% movie.downloadLinks.forEach((elem) => { %>
+  <% if (elem.type !== ": DOWNLOAD LINKS IN HINDI:") { %>
+  <a class="download_link" target="_blank" href="<%= elem.link%>">
     <%= elem.type %>
   </a>
-  <% } %> <% }) %>
+  <% } %>
+  <% }); %>
+  <!-- Properly closing forEach -->
+
 
   <hr class="movie_hr" />
   <p class="post_views">
