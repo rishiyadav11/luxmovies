@@ -129,21 +129,17 @@ app.get("/category/:category", async (req, res) => {
 
 app.get("/:slug", async (req, res) => {
   try {
-    const slug = req.params.slug; // Extract slug from the request parameters
-    // Fetch the movie using the slug from the database
+    const slug = req.params.slug;
     const movie = await Posts.findOne({ slug });
-    Posts.findOne({ slug })
-      .then((res) => res.json())
-      .then(async (res) => console.log(res));
 
     if (!movie) {
-      return res.redirect("/"); // Handle case where movie is not found
+      return res.redirect("/");
     }
 
-    res.render("movie.ejs", { movie }); // Render the view with the movie data
+    res.render("movie.ejs", { movie });
   } catch (error) {
-    console.error("Error fetching movie:", error); // Log the error for debugging
-    res.status(500).send("An error occurred while fetching the movie."); // Handle server errors
+    console.error("Error fetching movie:", error);
+    res.status(500).send("An error occurred while fetching the movie.");
   }
 });
 
